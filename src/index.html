@@ -7,6 +7,24 @@
     <title>React</title>
 </head>
 <body>
+    <div>
+        <h1>
+            i am a vnilaJS app
+        </h1>
+        <button id="click-btn">click</button>
+        <div id="number"></div>
+    </div>
+    <hr>
     <div id="app"></div>
+    <script>
+        var number = 0;
+        var clickBtn = document.getElementById("click-btn");
+        var numberDisplay = document.getElementById("number");
+        numberDisplay.innerHTML = number;
+        clickBtn.addEventListener("click", function() {
+            number += 1;
+            numberDisplay.innerHTML = number;
+        })
+    </script>
 </body>
 </html>
