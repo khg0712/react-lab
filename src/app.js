@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FormContainer from './js/components/container/FormContainer'
+import ExampleContainer from './js/components/container/ExampleContainer'
 
 export default class App extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class App extends Component {
     return (
       <div>
         <FormContainer />
+        <ExampleContainer />
       </div>
     );
   }
