@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   // entry file
@@ -7,7 +8,7 @@ module.exports = {
   // 컴파일 + 번들링된 js 파일이 저장될 경로와 이름 지정
   output: {
     path: path.resolve(__dirname, 'dist/js'),
-    filename: 'bundle.js'
+    filename: '[name].[contenthash].js',
   },
   module: {
     rules: [
@@ -33,6 +34,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    new BundleAnalyzerPlugin(),
   ],
   devtool: 'source-map',
   mode: 'development'
