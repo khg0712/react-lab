@@ -5,11 +5,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
+// import 'antd/dist/antd.css';
+
 const OtherComponent = lazy(() => import('../presentational/OtherComponent'));
+const Card = lazy(() => import('../presentational/Card'));
+const Calendar = lazy(() => import('../presentational/Calendar'));
 
 class ReactRouterContainer extends Component {
-
-
   render() {
     return (
       <Router>
@@ -22,6 +24,12 @@ class ReactRouterContainer extends Component {
               <li>
                 <Link to="/other">other</Link>
               </li>
+              <li>
+                <Link to="/card">card</Link>
+              </li>
+              <li>
+                <Link to="/calendar">calendar</Link>
+              </li>
             </ul>
           </nav>
 
@@ -30,6 +38,8 @@ class ReactRouterContainer extends Component {
           <Suspense fallback={"loading"}>
             <Switch>
               <Route path="/other" component={OtherComponent} />
+              <Route path="/card" component={Card} />
+              <Route path="/calendar" component={Calendar} />
               <Route path="/">
                 home
               </Route>
