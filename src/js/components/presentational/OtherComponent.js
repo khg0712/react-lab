@@ -1,8 +1,9 @@
 import React, {} from "react";
+import moment from "moment"
 
 const OtherComponrnt = (props) => {
   return (
-    <input value={props.value} onChange={props.onChangeInput} placeholder="제목을 입력해주세요"/>
+    moment.now()
   )
 }
 
